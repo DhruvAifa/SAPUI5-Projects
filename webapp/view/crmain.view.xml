@@ -1,0 +1,43 @@
+<mvc:View controllerName="crud.controller.crmain"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+
+        <!-- List Panel -->
+        <Panel id="listPanel">
+            <List id="List" mode="SingleSelectMaster" items="{/Categories}" selectionChange="onCategories">
+                <items>
+                    <StandardListItem title="{Name}" description="ID: {ID}" />
+                </items>
+            </List>
+            <Button text="Add Category" press="onAddCategory" />
+        </Panel>
+
+        <!-- Category Form -->
+        <Panel id="categoryForm" visible="false">
+            <VBox>
+                <Label text="Name" />
+                <Input id="categoryName" />
+                
+                <Label text="ID" />
+                <Input id="categoryID" type="Number" />
+                
+                <Button text="Save" press="onSaveCategory" />
+                <Button text="Cancel" press="onCancel" />
+            </VBox>
+        </Panel>
+
+        <!-- Details Panel -->
+<Panel id="detailsPanel" visible="false">
+    <VBox>
+        <Button text="Back" press="onBack" />
+        <Text text="Name: {Name}" />
+        <Text text="ID: {ID}" />
+        <Button text="Edit" type="Emphasized" press="onEditCategory" />
+        <Button text="Delete" type="Negative" press="onDeleteCategory" />
+    </VBox>
+</Panel>
+
+
+    </Page>
+</mvc:View>
