@@ -1,0 +1,78 @@
+<mvc:View controllerName="com.aifa.sap.tilesdashboard.controller.Category"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+ <Page title="Category" titleAlignment="Center">
+      <customHeader>
+            <Bar>
+                <contentLeft>
+                    <HBox alignItems="Start">
+                        <Image src="data:image/png;base64,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" 
+                          width="100px" height="35px" />
+                    </HBox>
+                </contentLeft>
+                <contentMiddle>
+                <HBox alignContent="Center">
+                        <Title text="Category"/>
+                        </HBox>
+                </contentMiddle>
+            </Bar>
+       </customHeader>
+           <IconTabBar id="iconTabBar3" class="iconTabBar3">
+                        <items>
+                                    <IconTabFilter text="Categories" key="Categories" icon="sap-icon://category" class="customTabSpacing">
+                    <SearchField width="30%" id="categorySearchField" showSearchButton="true" 
+                        liveChange="onCategorySearchLiveChange" search="onCategorySearchPress"/>
+                    <ScrollContainer width="100%" height="475px" vertical="true">
+                        <List id="CategoriesList" mode="SingleSelectMaster" items="{/Categories}" selectionChange="onCategorySelect">
+                            <CustomListItem>
+                                <VBox class="sapUiSmallMargin">
+                                    <Title text="{CategoryName}" level="H5" />
+                                    <HBox>
+                                        <Label text="CategoryID: " width="80px"/>
+                                        <Text text="{CategoryID}" />
+                                    </HBox>
+                                </VBox>
+                            </CustomListItem>
+                        </List>    
+                    </ScrollContainer>                        
+                </IconTabFilter>
+
+                 <IconTabSeparator />
+              <IconTabFilter text="Category Details" key="CategoryDetails" icon="sap-icon://tag" class="customTabSpacing" visible="true">
+    <content>
+        <VBox class="sapUiSmallMargin">
+            <HBox>
+                <Label text="Category ID" width="150px"/>
+                <Text id="categoryID1" text="{CategoryID}" />
+            </HBox>
+
+            <HBox>
+                <Label text="Category Name" width="150px"/>
+                <Text id="categoryName" text="{CategoryName}" />
+            </HBox>
+
+            <HBox>
+                <Label text="Description" width="150px"/>
+                <Text id="categoryDescription" text="{Description}" />
+            </HBox>
+
+            <HBox>
+                <Label text="Picture" width="150px"/>
+                <Image id="categoryImage" src="{Picture}" width="100px" height="100px"/>
+            </HBox>
+
+            <HBox class="sapUiSmallMarginTop">
+                <Button text="Back" press="onBackToCategories"/>
+            </HBox>
+        </VBox>
+    </content>
+</IconTabFilter>
+
+
+
+           </items>
+           
+           </IconTabBar>
+    </Page>
+
+    </mvc:View>

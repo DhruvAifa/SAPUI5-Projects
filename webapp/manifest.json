@@ -1,0 +1,173 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.aifa.sap.tilesdashboard",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.0",
+      "toolsId": "2d6f705a-1f5f-4996-9213-598c9915ff6a"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.134.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.aifa.sap.tilesdashboard.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.aifa.sap.tilesdashboard.view",
+        "async": true,
+        "viewPath": "com.aifa.sap.tilesdashboard.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+            "pattern": "Products",
+            "name": "Products",
+            "target": "Products"
+        },
+        {
+            "pattern": "OrdersSuppliers",
+            "name": "OrdersSuppliers",
+            "target": "OrdersSuppliers"
+        },
+        {
+            "pattern": "Invoice",
+            "name": "Invoice",
+            "target": "Invoice"
+        },
+        {
+            "pattern": "Category",
+            "name": "Category",
+            "target": "Category"
+        },
+        {
+            "pattern": "Shippers",
+            "name": "Shippers",
+            "target": "Shippers"
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1"
+        },
+        "Products": {
+            "viewName": "Products",
+            "viewLevel": 2,
+            "viewPath": "com.aifa.sap.tilesdashboard.view",
+            "controlAggregation": "pages"
+        },
+        "OrdersSuppliers": {
+            "viewName": "OrdersSuppliers",
+            "viewLevel": 2,
+            "viewPath": "com.aifa.sap.tilesdashboard.view",
+            "controlAggregation": "pages"
+        },
+        "Invoice": {
+            "viewName": "Invoice",
+            "viewPath": "com.aifa.sap.tilesdashboard.view",
+            "viewLevel": 2,
+            "controlAggregation": "pages"
+        },
+        "Category": {
+            "viewName": "Category",
+            "viewLevel": 2,
+            "viewPath": "com.aifa.sap.tilesdashboard.view",
+            "controlAggregation": "pages"
+        },
+        "Shippers": {
+            "viewName": "Shippers",
+            "viewLevel": 2,
+            "viewPath": "com.aifa.sap.tilesdashboard.view",
+            "controlAggregation": "pages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.aifa.sap.tilesdashboard.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "comaifasaptilesdashboard"
+  }
+}
