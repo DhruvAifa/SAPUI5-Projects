@@ -6,13 +6,14 @@
     
      <Panel id="listPanel">
      <VBox id="Vbox" visible="true">
-    <!-- <Button  text="Add Employee" press="onAddEmployee"/> -->
+    
     </VBox>
                 <List id="employeeList" mode="SingleSelectMaster" items="{/Employees}" selectionChange ="onSelectEmployee">
                     <items>
                         <StandardListItem id="listitem" title="{FirstName} {LastName}" description="ID: {EmployeeID}" />
                     </items>
                 </List>
+                
                 
             </Panel>
  
