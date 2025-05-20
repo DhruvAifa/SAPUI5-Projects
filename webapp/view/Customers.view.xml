@@ -1,0 +1,54 @@
+<mvc:View controllerName="globaltrades.controller.Customers"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+<Page title="Customers" titleAlignment="Center" >
+  <VBox class="sapUiSmallMargin">
+    <HBox justifyContent="End" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+      <Button text="Add Customer" icon="sap-icon://add" type="Emphasized" press="onAddCustomer" />
+    </HBox>
+<ScrollContainer height="365px" vertical="true">
+    <Table id="customerTable" items="{customerModel>/customers}">
+      <columns>
+        <Column><Text text="Customer ID" /></Column>
+        <Column><Text text="Name" /></Column>
+        <Column><Text text="Email" /></Column>
+        <Column><Text text="Phone Number" /></Column>
+        <Column><Text text="Actions" /></Column>
+      </columns>
+
+      <items>
+        <ColumnListItem>
+          <cells>
+            <Text text="{customerModel>customerId}" />
+            <Text text="{customerModel>name}" />
+            <Text text="{customerModel>email}" />
+            <Text text="{customerModel>phone}" />
+            <HBox class="sapUiTinyMargin">
+              <Button icon="sap-icon://display" press="onViewDetails" tooltip="View" class="sapUiTinyMarginEnd"/>
+              <Button icon="sap-icon://edit" type="Emphasized" press="onEditCustomer" tooltip="Edit" class="sapUiTinyMarginEnd"/>
+              <Button icon="sap-icon://delete" type="Negative" press="onDeleteCustomer" tooltip="Delete"/>
+            </HBox>
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+    </ScrollContainer>
+  </VBox>
+
+<Popover
+    id="customerPopover" 
+    placement="Auto"
+    showHeader="true"
+    title="Customer Details"
+    contentWidth="300px">
+    <VBox class="sapUiSmallMargin" binding="{customerModel>/selectedCustomer}">
+      <Text text="Customer ID: {customerModel>customerId}"/>
+      <Text text="Name: {customerModel>name}"/>
+      <Text text="Email: {customerModel>email}"/>
+      <Text text="Phone: {customerModel>phone}"/>
+      <Text text="Address: {customerModel>address}"/>
+    </VBox>
+</Popover>
+  </Page>
+</mvc:View>

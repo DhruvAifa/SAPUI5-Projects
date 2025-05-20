@@ -1,0 +1,60 @@
+/* Enter your custom styles here */
+.sapMITBFilter {
+    margin: 0 40%;
+}
+.avatarSpacing {
+    margin-left: 12px;
+}
+.imageBorder {
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tileWithBg {
+    background-image: url("https://go.deckcommerce.com/hubfs/iStock-1204099658.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px; 
+    color: white; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.tileWithBg1 {
+    background-image: url("https://blog.boxme.asia/wp-content/uploads/2020/04/Warehouse-3.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px; 
+    color: white; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.tileWithBg2 {
+    background-image: url("https://blog.bestbuy.ca/wp-content/uploads/2016/10/people-working-on-laptops-in-cafe.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px; 
+    color: white; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+.whiteHeader .sapMGTTitle {
+    color: white !important;
+}
+
+.tileWithBg:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+.customCarousel .sapMCrslPrev,
+.customCarousel .sapMCrslNext {
+    opacity: 1 !important;        
+    visibility: visible !important;
+    transition: none !important;  
+}

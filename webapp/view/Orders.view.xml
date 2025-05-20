@@ -1,0 +1,81 @@
+<mvc:View controllerName="globaltrades.controller.Orders"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <!-- <Page id="page1" title="{i18n>title}"> -->
+        <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding iconTabBar" selectedKey="orders">
+            <items>
+                
+                <IconTabFilter
+                    text="Orders"
+                    icon="sap-icon://order-status"
+                    key="orders"
+                    class="customTabSpacing">
+
+                    <VBox id="ordersListSection" class="sapUiSmallMargin" visible="true">
+                        <HBox justifyContent="End" class="sapUiTinyMarginTop sapUiTinyMarginBottom">
+                            <Button text="Add Order" press=".onAdd" />
+                        </HBox>
+
+                        <ScrollContainer width="100%" height="350px" vertical="true">
+                            <Table id="ordersTable" items="{ordersModel>/orders}">
+                                <columns>
+                                    <Column><Text text="Order ID" /></Column>
+                                    <Column><Text text="Customer ID" /></Column>
+                                    <Column><Text text="Order Date" /></Column>
+                                    <Column><Text text="Ship Country" /></Column>
+                                    <Column><Text text="Actions" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem press="onItemPress" type="Active">
+                                        <cells>
+                                            <Text text="{ordersModel>OrderID}" />
+                                            <Text text="{ordersModel>CustomerID}" />
+                                            <Text text="{ordersModel>OrderDate}" />
+                                            <Text text="{ordersModel>ShipCountry}" />
+                                            <HBox>
+                                                <Button text="Edit" press=".onEdit" />
+                                                <Button text="Delete" press=".onDelete" />
+                                            </HBox>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </ScrollContainer>
+                    </VBox>
+                </IconTabFilter>
+
+                <IconTabSeparator />
+
+                
+                <IconTabFilter
+                    text="Order Details"
+                    icon="sap-icon://detail-view"
+                    key="orderDetails"
+                    class="customTabSpacing">
+
+                    <VBox id="orderDetailPage" class="sapUiSmallMargin">
+                            <HBox><Text text="Order ID " width="150px"/><Text text="{ordersModel>/selectedOrder/OrderID}" /></HBox>
+                            <HBox><Text text="Customer ID " width="150px"/><Text text="{ordersModel>/selectedOrder/CustomerID}" /></HBox>
+                            <HBox><Text text="Employee ID " width="150px"/><Text text="{ordersModel>/selectedOrder/EmployeeID}" /></HBox>
+                            <HBox><Text text="Product ID " width="150px"/><Text text="{ordersModel>/selectedOrder/productID}" /></HBox>
+                            <HBox><Text text="Order Date " width="150px"/><Text text="{ordersModel>/selectedOrder/OrderDate}" /></HBox>
+                            <HBox><Text text="Required Date " width="150px"/><Text text="{ordersModel>/selectedOrder/RequiredDate}" /></HBox>
+                            <HBox><Text text="Shipped Date " width="150px"/><Text text="{ordersModel>/selectedOrder/ShippedDate}" /></HBox>
+                            <HBox><Text text="Ship Via " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipVia}" /></HBox>
+                            <HBox><Text text="Freight " width="150px"/><Text text="{ordersModel>/selectedOrder/Freight}" /></HBox>
+                            <HBox><Text text="Ship Name " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipName}" /></HBox>
+                            <HBox><Text text="Ship Address " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipAddress}" /></HBox>
+                            <HBox><Text text="Ship City " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipCity}" /></HBox>
+                            <HBox><Text text="Ship Region " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipRegion}" /></HBox>
+                            <HBox><Text text="Ship Postal Code " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipPostalCode}" /></HBox>
+                            <HBox><Text text="Ship Country " width="150px"/><Text text="{ordersModel>/selectedOrder/ShipCountry}" /></HBox>
+
+                          <Button text="Back" press="onBackToOrders" class="sapUiSmallMarginTop"/>
+                    </VBox>
+
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    <!-- </Page> -->
+</mvc:View>

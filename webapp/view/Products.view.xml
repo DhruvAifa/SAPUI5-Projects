@@ -1,0 +1,51 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="globaltrades.controller.Products">
+
+  <Page title="Products" titleAlignment="Center">
+    <content >
+            <VBox class="sapUiMediumMargin">
+        <HBox justifyContent="End" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+          <Button text="Add Product" press="onAddProduct" />
+        </HBox>
+
+        <ScrollContainer height="500px" vertical="true">
+          <Table
+            id="productsTable"
+            items="{ path: 'productsModel>/products' }"
+            inset="false"
+            width="100%"
+            fixedLayout="true">
+
+            <columns>
+              <Column><Text text="Product ID"/></Column>
+              <Column><Text text="Product Name"/></Column>
+              <Column><Text text="Unit Price($)"/></Column>
+              <Column><Text text="Quantity"/></Column>
+              <Column><Text text="Actions"/></Column>
+            </columns>
+
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{productsModel>ProductID}" />
+                  <Text text="{productsModel>ProductName}" />
+                  <Text text="{productsModel>UnitPrice}" />
+                  <Text text="{productsModel>Quantity}" />
+                  <HBox>
+                    <Button text="Edit" press="onEditProduct" type="Emphasized" />
+                    <Button text="Delete" press="onDeleteProduct" type="Reject" />
+                  </HBox>
+                </cells>
+              </ColumnListItem>
+            </items>
+
+          </Table>
+        </ScrollContainer>
+      </VBox>
+
+    </content>
+  </Page>
+  
+</mvc:View>

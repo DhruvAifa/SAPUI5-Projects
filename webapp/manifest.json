@@ -1,0 +1,147 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "globaltrades",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.3",
+      "toolsId": "91de8e33-e81c-4ef8-8505-287c03bff484"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.134.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "globaltrades.i18n.i18n"
+        }
+      },
+      "ordersModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/dummyData.json"
+      },
+      "productsModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/dummyData.json"
+      },
+      "customerModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/dummyData.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "globaltrades.view",
+        "async": true,
+        "viewPath": "globaltrades.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "pattern": "Orders",
+          "name": "Orders",
+          "target": "Orders"
+      },
+      {
+        "pattern": "Products",
+        "name": "Products",
+        "target": "Products"
+    },
+    {
+      "pattern": "Customers",
+      "name": "Customers",
+      "target": "Customers"
+  }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1"
+        },
+        "Orders": {
+          "viewName": "Orders",
+          "viewLevel": 2,
+          "viewPath": "globaltrades.view",
+          "controlAggregation": "pages"
+      },
+      "Products": {
+          "viewName": "Products",
+          "viewLevel": 2,
+          "viewPath": "globaltrades.view",
+          "controlAggregation": "pages"
+      },
+      "Customers": {
+          "viewName": "Customers",
+          "viewLevel": 2,
+          "viewPath": "globaltrades.view",
+          "controlAggregation": "pages"
+      }
+      }
+    },
+    "rootView": {
+      "viewName": "globaltrades.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "globaltrades"
+  }
+}
